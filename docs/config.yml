@@ -1,0 +1,8 @@
+theme: "black"
+transition: "page"
+title: "debugroom-Technical-Academy"
+revealjs_config:
+  autoSlide: 0
+  loop: false
+  slideNumber: true
+  autoPlayMedia: true
