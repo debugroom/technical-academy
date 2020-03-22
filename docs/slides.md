@@ -1,14 +1,15 @@
-### Technical Academy
+<img src="images/site-qr.png" style="position:absolute; top:0px; right:0px" >
 
+### Technical Academy
 
 <span style="font-size:28px">Cloud Native & MicroService on AWS</span>
 
 
-2020.1.17
+2020.4.7
 
 ***
 
-### 自己紹介
+### 塾長紹介
 
 <p><img src="images/profile.jpg" style="float:left" width="40%"></p>
 <div style="margin: 20px 0px auto">
@@ -69,17 +70,49 @@
 
 ---
 
+### 塾の活動方針
+
+<ul>
+  <span style="font-size:22px">
+    <li style="margin: 10px 0px 10px">
+      これまで塾長が蓄積してきたSpring/AWSをベースとした技術検証・ナレッジのトランスファーを通してトップ人材を育成
+    </li>
+    <li style="margin: 10px 0px 10px">
+      初級〜中級技術者を対象とした育成コンテンツの整備・スキルマップの定義
+    </li>
+    <li style="margin: 10px 0px 10px">
+      デジタル技術リファレンスアーキテクチャ For AWSの整備・公開
+    </li>
+  </span>
+</ul>
+
+---
+
 ### 技術テーマジャンル
 
-- マイクロサービスアーキテクチャ
-- クラウドネイティブアプリケーションデザインパターン
-- リアクティブプログラミング/サーバレス
-- NoSQLデータモデリング・実装
-
+<ul>
+  <span style="font-size:28px">
+    <li style="margin: 10px 0px 10px">
+      マイクロサービスアーキテクチャ
+    </li>
+    <li style="margin: 10px 0px 10px">
+      クラウドネイティブアプリケーションデザインパターン
+    </li>
+    <li style="margin: 10px 0px 10px">
+      リアクティブプログラミング/サーバレス
+    </li>
+    <li style="margin: 10px 0px 10px">
+      NoSQLデータモデリング・実装
+    </li>
+    <li style="margin: 10px 0px 10px">
+      ニュージャンル
+    </li>
+  </span>
+</ul>
 
 ***
 
-#### TECHNICAL ACADEMY R&D THEME
+#### 技術テーマ ※詳細はシラバスを参照
 
 <div style="font-size:24px; margin:auto">
   <table>
@@ -122,6 +155,8 @@
 
 ---
 
+#### 技術テーマ ※詳細はシラバスを参照
+
 <div style="font-size:24px; margin:auto">
   <table>
     <thead>
@@ -133,7 +168,7 @@
     </thead>
     <tbody>
       <tr>
-        <td rowspan="6">クラウドネイティブアプリケーションデザインパターン</td>
+        <td rowspan="7">クラウドネイティブアプリケーションデザインパターン</td>
         <td>オンライン非同期処理パターン(Spring Cloud Stream/Spring Integration/Amazon Managed Streaming for Kafka/Kinesis)</td>
         <td>3</td>
       </tr>
@@ -154,6 +189,10 @@
         <td>3</td>
       </tr>
       <tr>
+        <td>教育コンテンツ(チャットアプリケーション)の開発</td>
+        <td>2</td>
+      </tr>
+      <tr>
         <td style="border-bottom:1px solid;">CloudFormationを用いたアプリケーションDevOps基盤自動化資材の開発</td>
         <td style="border-bottom:1px solid;">2</td>
       </tr>
@@ -162,6 +201,8 @@
 </div>
 
 ---
+
+#### 技術テーマ ※詳細はシラバスを参照
 
 <div style="font-size:24px; margin:auto">
   <table>
@@ -205,7 +246,9 @@
 
 ---
 
-<div style="font-size:24px; margin:auto">
+#### 技術テーマ ※詳細はシラバスを参照
+
+<div style="font-size:22px; margin:auto">
   <table>
     <thead>
       <tr>
@@ -258,7 +301,7 @@
 <span style="font-size:28px">TECHINICAL GRADE</span>
 
 
-<div style="font-size:20px; margin:auto">
+<div style="font-size:18px; margin:auto">
   <table>
     <colgroup>
       <col style='width:10%;'>
@@ -435,11 +478,443 @@
   </table>
 </div>
 
+***
+***
+
+#### 学習コンテンツ整備
+
+<ul>
+  <span style="font-size:22px">
+    <li style="margin: 10px 0px 10px">
+    Level1〜Level2向けにクラウドネイティブ・マイクロサービスアーキテクチャアプリケーション/AWSマネージドサービスの基礎を学べる学習コンテンツを整備する。
+    </li>
+    <li style="margin: 10px 0px 10px">
+    基本的には実践型で、自分の手でアプリケーションや実行環境、CI/CDの仕組みまで構築する。
+    </li>
+    <li style="margin: 10px 0px 10px">
+      フルコースで1ヶ月、各テーマを切り取って学習可能な構成とする。
+    </li>
+    <li style="margin: 10px 0px 10px">
+      新しい技術の検証などにも利用できる
+    </li>
+    <li style="margin: 10px 0px 10px">
+      英語化を視野に入れて作成する
+    </li>
+  </span>
+</ul>
+
+---
+
+<span style="font-size:28px">題材：チャットアプリケーション</span>
+
+<img src="images/chat-application.png" width="50%">
+
+---
+
+<span style="font-size:22px">チャットアプリケーションのアーキテクチャ</span>
+
+<img src="images/chat-application-architecture.png" width="90%">
+
+---
+
+<span style="font-size:22px">チャットアプリケーション構築のポイント</span>
+
+<ul>
+  <span style="font-size:14px">
+    <li style="margin: 10px 0px 10px">アプリケーションの基本的な要件
+      <ul>
+        <li style="margin: 10px 0px 10px">
+          フロントにBFF(BackendForFrontend)アプリケーションをECSクラスタ構成で配置し、ブラウザとモバイルのリクエストをアグリゲーションする。ブラウザ向けにはWebページを返し、モバイル向けにはJSONデータを返却する。コンテナアプリケーションはマルチアベイラビリティゾーンでスケールアウト可能な構成とし、セッションデータやキャッシュはElastiCacheRedisに保存すること。いったん、バックエンドのサービスはBFFでオーケストレーションするものとするが、応用編のオプションとしてコレオグラフィでのマイクロサービスアーキテクチャ構成を考える。
+        </li>
+        <li style="margin: 10px 0px 10px">
+          バックエンドはマイクロサービス構成とする。機能はチャットサービスとユーザ管理サービス。チャットサービスはBFFと同様ECS(Fargate)構成、ユーザ管理はAppMesh+EKSで構成する。全てのアプリケーションはマルチアベイラビリティゾーンでスケールアウト可能な構成で冪等性を担保し、ステートレスに実装すること。
+        </li>
+        <li style="margin: 10px 0px 10px">
+          チャットサービスでは、NoSQLデータベースとしてDynamoDB(CassandraService応用編オプションも追加)、ユーザ管理ではRDSにそれぞれデータ保存する。応用編のオプションでSpringDataReactiveなどを使ってノンブロッキングなデータ入出力ができるようにする。
+        </li>
+        <li style="margin: 10px 0px 10px">
+          認証はBFFで、SpringSercutiry+AWS Cognitoで行う。認可はとりあえず考慮しないが、応用編のオプションでOAuth2+Keycloak認証認可の仕組みを導入し、マイクロサービスへのアクセスを制御する。
+        </li>
+        <li style="margin: 10px 0px 10px">
+          チャットサービスではクライアントにリアルタイムにメッセージ通知されるように、WebSockets通信する。モバイルは別途プッシュ通知も利用する。応用編のオプションでSpring5.3のRSocket通信ができるようにする。
+        </li>
+        <li style="margin: 10px 0px 10px">
+          チャットサービスでは写真や動画も送信できるようにするが、S3へダイレクトアップロードするものとし、サムネイルの作成などの重たい処理はAWS Lambdaに実行させる仕様とする。処理完了後はSQSやプッシュ通知を利用して、クライアントにサムネイルイメージをS3からダイレクトダウンロードさせる。AmazonSTSを使って短時間のみS3へアクセス可能な署名キーを発行すること。応用編のオプションでは画像や動画の機械学習サービスを使った解析やイベント通知ができるようにする。
+        </li>
+        <li style="margin: 10px 0px 10px">
+          アプリケーションの環境はCodePipeline+CodeBuildを使ったCI/CDを仕組みを導入する。
+        </li>
+        <li style="margin: 10px 0px 10px">
+          アプリケーションやCI/CD環境はCloudFormationを使ってInfrastructureAsCodeとしてコード化しておくこと。
+        </li>
+      </ul>
+    </li>
+  </span>
+</ul>
+
+
 
 ***
 ***
 
-#### マイクロサービスアーキテクチャ
+<span style="font-size:28px">
+デジタル技術リファレンスアーキテクチャ For AWS
+</span>
+
+<span style="font-size:20px">
+様々な技術を身に付けることも大事だが、同時に技術を駆使して、デジタルトランスフォーメーションを実現できるスキルをもつことが重要である。
+</span>
+
+***
+***
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例I Uber/Lyft
+</span>
+<span style="font-size:20px">
+位置情報・地図データを組み合わせたホワイトタクシー・宅配などの新たなサービスの創出
+</span>
+
+<img src="images/uber.png" style="border:0"  width="100%">
+
+<span style="font-size:20px">
+</span>
+
+***
+***
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 II Cenovus Energy
+</span>
+
+<img src="images/cenovus-energy-1.png" style="border:0"  width="80%">
+
+---
+
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 II Cenovus Energy
+</span>
+
+<img src="images/cenovus-energy-2.png" style="border:0"  width="80%">
+
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 II Cenovus Energy
+</span>
+
+<img src="images/cenovus-energy-3.png" style="border:0"  width="80%">
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 II Cenovus Energy
+</span>
+
+<img src="images/cenovus-energy-4.png" style="border:0"  width="80%">
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 II Cenovus Energy
+</span>
+
+<img src="images/cenovus-energy-5.png" style="border:0"  width="80%">
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 II Cenovus Energy
+</span>
+
+<img src="images/cenovus-energy-6.png" style="border:0"  width="80%">
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 II Cenovus Energy
+</span>
+
+# Demo
+
+---
+
+<section data-background-video="https://debugroom-sample.s3-ap-northeast-1.amazonaws.com/cenovus-energy-ibm-think-demo.mov" data-background-video-loop data-background-video-muted data-background-opacity="1">
+  <div style="position: absolute; width: 10%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+    <h2>Session</h2>
+  </div>
+</section>
+
+***
+***
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 III Walt Disney World
+</span>
+
+<img src="images/walt-disney-world-1.png" style="border:0" width="90%">
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 III Walt Disney World
+</span>
+
+<img src="images/walt-disney-world-2.png" style="border:0" width="90%">
+
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 III Walt Disney World
+</span>
+
+<img src="images/walt-disney-world-3.png"  style="border:0" width="90%">
+
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 III Walt Disney World
+</span>
+
+<img src="images/walt-disney-world-4.png" style="border:0"  width="90%">
+
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 III Walt Disney World
+</span>
+
+<img src="images/walt-disney-world-5.png" style="border:0"  width="90%">
+
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 III Walt Disney World
+</span>
+
+<img src="images/walt-disney-world-6.png" style="border:0"  width="90%">
+
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 III Walt Disney World
+</span>
+
+<img src="images/walt-disney-world-7.png" style="border:0"  width="90%">
+
+
+---
+
+<span style="font-size:28px">
+デジタルトランスフォーメーション事例 III Walt Disney World
+</span>
+
+<img src="images/walt-disney-world-8.png" style="border:0"  width="90%">
+
+***
+***
+
+<span style="font-size:28px">
+各事例で共通する<br/>デジタルトランスフォーメーションの最も重要なファクター
+</span>
+
+---
+
+<img src="images/digital-factor-1.png" style="border:0"  width="90%">
+
+
+---
+
+<img src="images/digital-factor-2.png" style="border:0"  width="90%">
+
+---
+
+<img src="images/digital-factor-3.png" style="border:0"  width="90%">
+
+---
+
+<img src="images/digital-factor-4.png" style="border:0"  width="90%">
+
+---
+
+<img src="images/digital-factor-5.png" style="border:0"  width="90%">
+
+---
+
+<img src="images/digital-factor-6.png" style="border:0"  width="90%">
+
+---
+
+<img src="images/digital-factor-7.png" style="border:0"  width="90%">
+
+---
+
+<img src="images/digital-factor-8.png" style="border:0"  width="90%">
+
+---
+
+<span style="font-size:28px">
+個々の技術だけに注力しても意味がない。<br/> 横断的にデータ活用できるケイパビリティが必要！
+</span>
+
+<img src="images/digital-factor-9.png" style="border:0"  width="90%">
+
+---
+
+<span style="font-size:16px">
+クラウドネイティブアプリケーション実装の基本アーキテクチャを考えるとともに、
+</span>
+
+<img src="images/digital-factor-10.png" style="border:0"  width="80%">
+
+---
+
+<span style="font-size:16px">
+より、広い視点でAWSをベースとしたデータ指向リファレンスアーキテクチャを考えよう
+</span>
+
+<img src="images/digital-factor-11.png" style="border:0"  width="80%">
+
+---
+
+<span style="font-size:16px">
+同じデータ指向観点の教育コンテンツとして総務省が提供しているものがあるので適宜利用
+</span>
+
+<a href="https://www.soumu.go.jp/ict_skill/" target="_blank">
+  <img src="images/digital-factor-12.png" style="border:0"  width="80%">
+</a>
+
+***
+***
+
+#### 塾の運営・作業の進め方
+
+---
+
+<span style="font-size:28px">
+作業環境
+</span>
+
+<img src="images/develop-environment-1.png" style="border:0"  width="100%">
+
+
+---
+
+<span style="font-size:28px">
+Usage
+</span>
+
+<img src="images/develop-environment-2.png" style="border:0"  width="100%">
+
+
+---
+
+#### :warning: 注意事項
+
+<img src="images/develop-environment-3.png" style="border:0"  width="100%">
+
+
+---
+
+<span style="font-size:28px">
+運営方法
+</span>
+
+<ul>
+  <span style="font-size:22px">
+    <li style="margin: 10px 0px 10px">
+      各ジャンル・テーマごとにTrelloでボード・カードを作成し、自分が着手しているテーマ・作業に名前を入れて、状況・プログレスを記載すること(聴講生は複数人が同じテーマを別々にやっても可)。
+    </li>
+    <li style="margin: 10px 0px 10px">
+      作業を進める場合は、自分が検証した内容や作業状況等、他の人に説明できるような形で必ずメモを残すこと。基本的にGitHubPageで、マークダウンツールやSphinx、直接HTMLを作成する等して記録を残すこと。サンプルは<a href="http://debugroom.github.io/doc/memo/work/reveal/install.html" target="_blank">こちら</a>
+    </li>
+    <li style="margin: 10px 0px 10px">
+      成果物としてまとめたメモ・ソースコードをウォークスルー/整形/英語化するなどして、適宜公開する形式をとる。
+    </li>
+    <li style="margin: 10px 0px 10px">
+      コミュニケーションツールでMattermostを使用する(新しいメンバが加わった場合でも、顔と名前が一致しやすいようにしたいので極力顔写真を使って欲しい)。作業を進める中でトラブルシューティング等が必ず発生するので、自力で解決できない場合はヒアリング。
+    </li>
+    <li style="margin: 10px 0px 10px">
+      ミーティング/勉強会は週一度2時間枠(毎週火曜日16:30-18:30)で基本対面で実施する(画面共有ができるビデオ会議システムも導入を検討する)。塾生は最低2週間に1度は状況報告・相談や作業内容の発表。聴講生は任意で相談・発表可(たまに塾長から指名される場合もある)。
+    </li>
+  </span>
+</ul>
+
+---
+
+<span style="font-size:28px">
+特別講義・ディスカッション・イベント
+</span>
+
+<div style="font-size:24px; margin:auto">
+  <table>
+    <colgroup>
+      <col style='width:15%;'>
+      <col style='width:85%;'>
+    </colgroup>
+    <thead>
+      <tr>
+        <th width="100px">時期</th>
+        <th>テーマ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>4月</td>
+        <td>Cloud Native / Micro Service VS On Premise / Monolithic</td>
+      </tr>
+      <tr>
+        <td>4月</td>
+        <td>Maven/Git</td>
+      </tr>
+      <tr>
+        <td>5月</td>
+        <td>AWS Summit(遠足)</td>
+      </tr>
+      <tr>
+        <td>4月-7月</td>
+        <td>AWS道場 ISHIZAPフィードバック</td>
+      </tr>
+      <tr>
+        <td>X月</td>
+        <td>OAuth2/OpenIDConnectの基本</td>
+      </tr>
+      <tr>
+        <td>X月</td>
+        <td>Docker</td>
+      </tr>
+      <tr>
+        <td>X月</td>
+        <td>Kubernetes</td>
+      </tr>
+      <tr>
+        <td>X月</td>
+        <td>SageMaker</td>
+      </tr>
+      <tr>
+        <td>X月</td>
+        <td>Springの最新動向等</td>
+      </tr>
+      <tr>
+        <td>X月</td>
+        <td>AWSの最新動向等</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+***
+***
+
+#### シラバス：マイクロサービスアーキテクチャ
 
 <ul>
   <span style="font-size:22px">
@@ -774,7 +1249,7 @@
 ***
 ***
 
-<span style="font-size:36px">クラウドネイティブアプリケーションデザインパターン</span>
+<span style="font-size:36px">シラバス：クラウドネイティブアプリケーションデザインパターン</span>
 
 <ul>
   <span style="font-size:22px">
@@ -1078,6 +1553,58 @@
     <thead>
       <tr>
         <th>テーマ</th>
+        <th>教育コンテンツ(チャットアプリケーション)の開発</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>概要・目的</td>
+        <td>
+          Level1〜2向けの教育コンテンツとしてチャットアプリケーションを整備する。アプリケーションの構成、アーキテクチャ・仕様は後述のページを参照。
+        </td>
+      </tr>
+      <tr>
+        <td>レベル</td>
+        <td>Level2</td>
+      </tr>
+      <tr>
+        <td>必要となる主な知識・技術</td>
+        <td>
+          ・SpringBoot等を使ったアプリケーション設計・実装<br/>
+          ・AWSマネージドサービスに関する全般知識
+        </td>
+      </tr>
+      <tr>
+        <td>成果物例</td>
+        <td>
+          ・正解となる実装サンプルコード<br/>
+          ・問題となる実装サンプルコード<br/>
+          ・問題・解説ドキュメント(日本語・英語)<br/>
+          ・環境を一括構築するCloudFormationテンプレート等
+        </td>
+      </tr>
+      <tr>
+        <td>参考資料</td>
+        <td>
+          ・<a href="https://news.mynavi.jp/itsearch/series/devsoft/AWS.html" target="_blank">AWSで作るクラウドネイティブアプリケーションの基本</a><br/>
+          ・<a href="https://news.mynavi.jp/itsearch/series/devsoft/AWSAuto.html" target="_blank">AWSで実践! 基盤構築・デプロイ自動化</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+<div style="font-size:22px; margin:auto">
+  <table>
+    <colgroup>
+      <col style='width:20%;'>
+      <col style='width:80%;'>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>テーマ</th>
         <th>CloudFormationを用いたアプリケーションDevOps基盤自動化資材の開発</th>
       </tr>
     </thead>
@@ -1118,7 +1645,7 @@
 ***
 ***
 
-#### リアクティブプログラミング
+#### シラバス：リアクティブプログラミング
 
 <ul>
   <span style="font-size:22px">
@@ -1291,7 +1818,7 @@
 ***
 ***
 
-#### NoSQLデータモデリング・実装手法
+#### シラバス：NoSQLデータモデリング・実装手法
 
 <ul>
   <span style="font-size:22px">
@@ -1451,7 +1978,7 @@
 ***
 ***
 
-#### ニュージャンル
+#### シラバス：ニュージャンル
 
 <ul>
   <span style="font-size:22px">
@@ -1834,75 +2361,4 @@
 </div>
 
 ***
-***
-
-#### その他活動：学習コンテンツ整備
-
-<ul>
-  <span style="font-size:22px">
-    <li style="margin: 10px 0px 10px">
-    Level1〜Level2向けにクラウドネイティブ・マイクロサービスアーキテクチャアプリケーション/AWSマネージドサービスの基礎を学べる学習コンテンツを整備する。
-    </li>
-    <li style="margin: 10px 0px 10px">
-    基本的には実践型で、自分の手でアプリケーションや実行環境、CI/CDの仕組みまで構築する。
-    </li>
-    <li style="margin: 10px 0px 10px">
-      フルコースで1ヶ月、各テーマを切り取って学習可能な構成とする。
-    </li>
-    <li style="margin: 10px 0px 10px">
-      新しい技術の検証などにも利用できる
-    </li>
-  </span>
-</ul>
-
----
-
-<span style="font-size:28px">題材：チャットアプリケーション</span>
-
-<img src="images/chat-application.png" width="50%">
-
----
-
-<span style="font-size:22px">チャットアプリケーションのアーキテクチャ</span>
-
-<img src="images/chat-application-architecture.png" width="90%">
-
----
-
-<span style="font-size:22px">チャットアプリケーション構築のポイント</span>
-
-<ul>
-  <span style="font-size:14px">
-    <li style="margin: 10px 0px 10px">アプリケーションの基本的な要件
-      <ul>
-        <li style="margin: 10px 0px 10px">
-          フロントにBFF(BackendForFrontend)アプリケーションをECSクラスタ構成で配置し、ブラウザとモバイルのリクエストをアグリゲーションする。ブラウザ向けにはWebページを返し、モバイル向けにはJSONデータを返却する。コンテナアプリケーションはマルチアベイラビリティゾーンでスケールアウト可能な構成とし、セッションデータやキャッシュはElastiCacheRedisに保存すること。いったん、バックエンドのサービスはBFFでオーケストレーションするものとするが、応用編のオプションとしてコレオグラフィでのマイクロサービスアーキテクチャ構成を考える。
-        </li>
-        <li style="margin: 10px 0px 10px">
-          バックエンドはマイクロサービス構成とする。機能はチャットサービスとユーザ管理サービス。チャットサービスはBFFと同様ECS(Fargate)構成、ユーザ管理はAppMesh+EKSで構成する。全てのアプリケーションはマルチアベイラビリティゾーンでスケールアウト可能な構成で冪等性を担保し、ステートレスに実装すること。
-        </li>
-        <li style="margin: 10px 0px 10px">
-          チャットサービスでは、NoSQLデータベースとしてDynamoDB(CassandraService応用編オプションも追加)、ユーザ管理ではRDSにそれぞれデータ保存する。応用編のオプションでSpringDataReactiveなどを使ってノンブロッキングなデータ入出力ができるようにする。
-        </li>
-        <li style="margin: 10px 0px 10px">
-          認証はBFFで、SpringSercutiry+AWS Cognitoで行う。認可はとりあえず考慮しないが、応用編のオプションでOAuth2+Keycloak認証認可の仕組みを導入し、マイクロサービスへのアクセスを制御する。
-        </li>
-        <li style="margin: 10px 0px 10px">
-          チャットサービスではクライアントにリアルタイムにメッセージ通知されるように、WebSockets通信する。モバイルは別途プッシュ通知も利用する。応用編のオプションでSpring5.3のRSocket通信ができるようにする。
-        </li>
-        <li style="margin: 10px 0px 10px">
-          チャットサービスでは写真や動画も送信できるようにするが、S3へダイレクトアップロードするものとし、サムネイルの作成などの重たい処理はAWS Lambdaに実行させる仕様とする。処理完了後はSQSやプッシュ通知を利用して、クライアントにサムネイルイメージをS3からダイレクトダウンロードさせる。AmazonSTSを使って短時間のみS3へアクセス可能な署名キーを発行すること。応用編のオプションでは画像や動画の機械学習サービスを使った解析やイベント通知ができるようにする。
-        </li>
-        <li style="margin: 10px 0px 10px">
-          アプリケーションの環境はCodePipeline+CodeBuildを使ったCI/CDを仕組みを導入する。
-        </li>
-        <li style="margin: 10px 0px 10px">
-          アプリケーションやCI/CD環境はCloudFormationを使ってInfrastructureAsCodeとしてコード化しておくこと。
-        </li>
-      </ul>
-    </li>
-  </span>
-</ul>
-
-
 ***
