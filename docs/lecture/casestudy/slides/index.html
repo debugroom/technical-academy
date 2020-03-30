@@ -41,16 +41,634 @@
   </head>
 
   <body>
+    <p><img src="images/site-qr.png" style="position:absolute; top:0px; right:0px; width:10%" ></p>
     <div class="reveal">
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
     <section>
+      <h3>CloudNative & Micro Service <br/ >VS <br/> On Premise & Monolitic</h3>
+    </section>
+    <section>
+      <section>
+        <h3>UseCase : オープンAPI</h3>
+      </section>
+      <section>
+        <p><img src="images/open-api.png" width="80%"></p>
+        <p><span style="font-size:12px"><a href="https://www.zenginkyo.or.jp/article/tag-g/9797/" target="_blank">出典: 総務省ICTスキル総合取得教材「APIによるデータ収集と利活用」</a></span></p>
+      </section>
+      <section>
+        <p><span style="font-size:28px">銀行業界におけるオープンAPI</span></p>
+        <p><img src="images/fintech-open-api-1.png" width="90%"></p>
+        <p><span style="font-size:12px">出典：<a href="https://www.zenginkyo.or.jp/article/tag-g/9797/" target="_blank">全国銀行協会「オープンAPIって何？」</a></span></p>
+      </section>
+      <section>
+        <p><span style="font-size:28px">押し寄せる金融業界におけるオープンAPI化の波</span></p>
+        <p><img src="images/fintech-open-api-2.png" width="80%"></p>
+        <p><span style="font-size:12px">出典：<a href="https://xtech.nikkei.com/atcl/nxt/column/18/00130/" target="_blank">全国銀行協会「オープンAPIって何？」</a></span></p>
+      </section>
+      <section>
+        <h3>何故APIを公開？どうすればよい？マイクロサービス？</h3>
+      </section>
+    </section>
+    <section>
+      <section>
+        <p>
+          <span style="font-size:40px">まず既存の仕組みを知ろう<br/><br/></span>
+          <span style="font-size:24px">レガシー&オンプレミス&モノリスで形成された世界最高峰の日本の決済システム</span>
+        </p>
+      </section>
+      <section>
+        <p><span style="font-size:38px">
+        決済の基本となる「振込」が発生したとき、<br/>どのようなデータが、いつ、どのように動くのか？
+        </p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+        インターネットバンキング(IB)で振込を行うときの処理の挙動をみてみよう。
+        </p>
+        <p><img src="images/mizuho-direct.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:22px">
+        塾長とそのフレンド2名に、お金の貸借があり、それぞれがIBを使って支払う。
+        </p>
+        <p><img src="images/money-transfer-example.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+        「振込」が行われるシステムの全体像
+        </p>
+        <p><img src="images/settlement-system-all.png"  style="border:0" width="90%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          銀行の代表的なシステム構成
+        </p>
+        <p><img src="images/hub-and-spoke.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          IBのシステム構成
+        </p>
+        <p><img src="images/ib-system.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          IBのモノリシックアプリケーション機能構成
+        </p>
+        <p><img src="images/ib-ap-functions.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          IBにおける振込のユースケース
+        </p>
+        <p><img src="images/ib-transfer-usecase.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          ユースケースを実現するIBの振込関連処理
+        </p>
+        <p><img src="images/ib-transfer-process-list.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          IBを使った振込処理の流れ(IB→勘定系システム)
+        </p>
+        <p><img src="images/ib-transfer-process-1.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          IBを使った振込処理の流れ(勘定系システム→RC)
+        </p>
+        <p><img src="images/ib-transfer-process-2.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          IBを使った振込処理の流れ(RC→全銀)
+        </p>
+        <p><img src="images/ib-transfer-process-3.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          全銀におけるネッティング処理
+        </p>
+        <p><img src="images/netting-1.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          全銀におけるネッティング処理
+        </p>
+        <p><img src="images/netting-2.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          全銀におけるネッティング処理
+        </p>
+        <p><img src="images/netting-3.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          IBを使った振込処理の流れ(全銀→振込先対象の銀行(非仕向先銀行))
+        </p>
+        <p><img src="images/ib-transfer-process-4.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p><span style="font-size:24px">
+          IBにおける振込におけるポイント・補足事項
+        </p>
+        <ul>
+          <span style="font-size:22px">
+            <li style="margin: 10px 0px 10px">
+              別の銀行向けの振込は簡単にロールバックできない(トランザクション自体を消せない。「組み戻し」するには別途手数料。)
+            </li>
+            <li style="margin: 10px 0px 10px">
+              勘定系システムは運転時間が決まっている。停止時間帯はIBのDBでデータをため込んで、営業日のオンライン時間になったら時間起動バッチで処理が実行される。
+              (2018年10月からモアタイム(営業日の15:30以降も処理を受けるシステム)ができたので、停止時間は各銀行次第)
+            </li>
+            <li style="margin: 10px 0px 10px">
+              個人の預金データの元データ(元帳)は勘定系システムにある。IBのDBでは、勘定系システムが停止している時間帯のデータ取得(金融機関情報、支店情報等)に加えて、トランザクションの記録が主な用途。
+            </li>
+            <li style="margin: 10px 0px 10px">
+              一つのシステムで業務トランザクションが完結するわけではない。各システムでの連携は、システムダウンを想定し、信頼性・可用性を高めたシステム構成でデータを永続化し、トランザクションデータを連携する。
+              各システムのトランザクションデータは結果整合性により担保される(そのリスクは銀行が負っている)。
+            </li>
+            <li style="margin: 10px 0px 10px">
+              キャッシュレス決済等、同じ資金決済データでも、一件あたりのトランザクションの金額が大きい(ミッションクリティカルなシステムとしては国内最高レベル)。1件でも不具合は許されない。
+              なお、基本的に決済は種類によって適用する法律が決まっている(資金決済法、銀行法、割賦販売法、外国為替に関する法律)ため、クラウド化を検討するにもシステム構成に注意が必要である。
+            </li>
+          </span>
+        </ul>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:22px">
+          参考資料
+          </span>
+        </p>
+        <ul>
+          <span style="font-size:22px">
+            <li style="margin: 10px 0px 10px">
+              <p><span style="font-size:22px"><a href="https://www.amazon.co.jp/gp/product/B07H7Z7X8R/ref=ppx_yo_dt_b_d_asin_title_o02?ie=UTF8&psc=1" target="_blank">決済インフラ入門</a></span></p>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <p><span style="font-size:22px"><a href="https://www.zengin-net.jp/zengin_net/pdf/pamphlet_j.pdf" target="_blank">全国銀行データ通信システム</a></span></p>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <p><span style="font-size:22px"><a href="https://www.amazon.co.jp/gp/product/B084QBQDZ3/ref=ppx_yo_dt_b_d_asin_title_o06?ie=UTF8&psc=1" target="_blank">みずほ銀行システム統合、苦闘の19年史　史上最大のITプロジェクト「3度目の正直」</a></span></p>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <p><span style="font-size:22px"><a href="https://www.mizuhobank.co.jp/direct/demo/index.html" target="_blank">みずほダイレクト体験版</a></span></p>
+            </li>
+          </span>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <section>
+        <p>
+          <span style="font-size:32px">なぜ銀行業界でオープンAPIの公開が進められているか？<br/></span>
+        </p>
+        <p><img src="images/fintech-open-api-1.png" width="90%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:32px">なぜ銀行業界でオープンAPIの公開が進められているか？<br/></span>
+        </p>
+        <ul>
+          <span style="font-size:22px">
+            <li style="margin: 10px 0px 10px">
+              オープンAPIは、他の事業者等とのオープンネットワーク上でのセキュアなデータ連携を可能とする技術であり、他の事業者等と金融機関が協働して、それぞれの保有する情報やサービスを組み合わせ、
+              オープン・イノベーションを実現していくためのキー・テクノロジーの一つと位置づけられ、世界標準準拠・最高レベルの金融サービス・テクノロジ普及を推進(金融庁等政府側の視点)。
+            </li>
+            <li style="margin: 10px 0px 10px">
+              伝統的なホールセール型ビジネス、リテール分野の衰退に伴い、新たな収益源としての手数料ビジネスの拡充を推進(銀行側の視点)。また、他業種サービスとの連携に関する、従来のセキュリティ課題の解消。
+            </li>
+            <li style="margin: 10px 0px 10px">
+              新規ビジネスと金融サービスを融合した新しいサービス創出、最新テクノロジを用いた既存データの活用を目論み、ビジネスチャンスを拡大(Fintech企業や従来システム業界の視点)。
+            </li>
+          </span>
+        </ul>
+        <p><span style="font-size:12px">出典：<a href="https://www.zenginkyo.or.jp/abstract/council/openapi/" target="_blank">全国銀行協会：オープンAPIのあり方に関する検討会</a></span></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">実現には以下のようなシステム構成を</span>
+        </p>
+        <p><img src="images/ib-system.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">このようなシステム構成に変えていく必要がある。</span>
+        </p>
+        <p><img src="images/ib-openapi-system-1.png" style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">銀行オープンAPIと連携したい事業者は増加していくと予想されるので、</span>
+        </p>
+        <p><img src="images/ib-openapi-system-2.png" style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:16px">外部接続数の段階的増加を踏まえるとスケーラビリティをもつクラウドへの移行が最適</span>
+        </p>
+        <p><img src="images/ib-openapi-system-3.png" style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:16px">既存AP改修の影響が大きいので、最初は以下のような構成も考えられるが</span>
+        </p>
+        <p><img src="images/ib-openapi-system-migration-1.png" style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:16px">既存APに全て処理を委譲するのはスケーラビリティに課題があるので、認証等一部の処理に限定し</span>
+        </p>
+        <p><img src="images/ib-openapi-system-migration-2.png" style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:22px">将来的なデータ移行を考慮して</span>
+        </p>
+        <p><img src="images/ib-openapi-system-migration-3.png" style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:22px">呼び出し関係(処理の委譲)を逆にすると</span>
+        </p>
+        <p><img src="images/ib-openapi-system-migration-4.png" style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:22px">最終的に下記と同等になるので、最初からデータ統合を視野に構築することが望ましい</span>
+        </p>
+        <p><img src="images/ib-openapi-system-3.png" style="border:0" width="80%"></p>
+      </section>
+    </section>
+    <section>
+      <section>
+        <p>
+          <span style="font-size:24px">クラウドネイティブ・マイクロサービスアーキテクチャ化を考えよう<br/></span>
+        </p>
+        <p><img src="images/ib-ap-functions.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">業務ロジックをどのようにAPIを切り出すか<br/></span>
+        </p>
+        <p><img src="images/openapi-app-architecture-1.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:22px">
+          API化・マイクロサービス分割の主な指針・考慮点
+          </span>
+        </p>
+        <ul>
+          <span style="font-size:22px">
+            <li style="margin: 10px 0px 10px">
+              様々なアプリケーションからの利用を想定したユースケースに応じAPIを定義、<span style="border-bottom: solid 2px white;">既存アプリケーション内でドメイン(業務)ロジック処理を分離し</span>、分離したロジックをAPIでラップするイメージで実装する。
+              基本的にドメイン(業務)単位でAPIアプリケーションを構成する。
+            </li>
+            <li style="margin: 10px 0px 10px">
+              アプリケーションの分割単位は部門／部署や開発プロジェクト体制といった点も考慮し、相互の影響が最小化するよう、データベースも含め分割を検討する。
+              ただし、厳密な一貫性が求められるデータは無理にデータベース分散させず、ACIDトランザクションが機能するよう構成する。
+            </li>
+            <li style="margin: 10px 0px 10px">
+              業務横断的(チームを跨ぐくらいの)処理の共通化は考えなくて良い。過度の共通化はマイクロサービスのメリットであるアジリティ向上、影響範囲の極小化が損なわれる。
+            </li>
+            <li style="margin: 10px 0px 10px">
+              各APIの想定アクセス数に応じて、頻度が大きいものはスケールでき、性能拡張がしやすいよう構成することを検討する。
+            </li>
+            <li style="margin: 10px 0px 10px">
+              SLA(Service Level Agreement)や、ビジネスインパクトが大きいAPIがあれば、信頼性・可用性高く構成する。
+            </li>
+          </span>
+        </ul>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">既存(レガシー)アプリケーションからのリビルドの課題</span>
+        </p>
+        <p><span style="font-size:16px">
+        SpringBootベースのアプリケーションでリビルドする(実装し直す)場合、ロジックをどのように分離できるのか？
+        </span></p>
 
-<h3>Test</h3>
-
-</section>
-
+        <div style="font-size:14px; margin:auto">
+          <table>
+            <colgroup>
+              <col style="width:15%;">
+              <col style="width:85%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th width="100px">移行タイプ</th>
+                <th>リビルド案</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.NET等他言語からの移行</td>
+                <td>設計書を元に一から作り直すか、バックエンドロジックを再利用し、REST APIでラップする。ただし、再利用時はスケーラビリティを目的としたステートレス化の可否や認証・認可の実装が課題になる</td>
+              </tr>
+              <tr>
+                <td>フレームワークなしの純粋なJavaServlet</td>
+                <td>ロジックやビューが混成して実装されている場合もあり、分離が困難。ボイラープレートコードなど無駄な実装も多いので、原則設計書(ソースコード)を元に作り直した方が良い</td>
+              </tr>
+              <tr>
+                <td>Strutsを利用したJavaWebシステム</td>
+                <td>Actionなどを分離し、一部再利用ができる可能性はあり。ただし、ボイラープレートコードなど無駄な実装も含まれている可能性があるので、原則設計書(ソースコード)を元に作り直した方が良い</td>
+              </tr>
+              <tr>
+                <td>企業独自フレームワーク</td>
+                <td>Javaの黎明期に実装した独自フレームワークなどでアーキテクチャ次第では一部再利用ができる可能性はあり。Strutsをベースとした拡張も多いが、ボイラープレートコードなど無駄な実装も含まれている可能性があるので、原則設計書(ソースコード)を元に作り直した方が良い</td>
+              </tr>
+              <tr>
+                <td>J2EEを利用したJavaWebシステム</td>
+                <td>StatelessSessionBeanなど、一部再利用ができる可能性はあり。ただし、ボイラープレートコードなど無駄な実装も含まれている可能性があるので、原則設計書(ソースコード)を元に作り直した方が良い</td>
+              </tr>
+              <tr>
+                <td>Seasor2などのOSSフレームワークを利用したJavaWebシステム</td>
+                <td>Actionなどを分離し、一部再利用ができる可能性はあり。ただし、サポート切れのライブラリも含まれている可能性があるので、原則設計書(ソースコード)を元に作り直した方が良い</td>
+              </tr>
+              <tr>
+                <td>SSH(Struts/Spring/Hibernate)を利用したJavaWebシステム</td>
+                <td>Springが管理するBeanを再利用ができる可能性はあり(最も再利用化の割合は高い)。</td>
+              </tr>
+              <tr>
+                <td>TERASOLUNA(Struts/Spring/iBatis2)を利用したJavaWebシステム</td>
+                <td>Springが管理するBeanを再利用ができる可能性はあり(再利用化の割合は高い)。ただし、サポート切れのライブラリも含まれている可能性があるので、一部作り直した方が良い</td>
+              </tr>
+              <tr>
+                <td>JavaEEを利用したシステム</td>
+                <td>CDIやEJBが管理するBeanを再利用できる可能性はあり(再利用の可能性は高い)。ただし、SpringよりMicroProfileへの移行が適切な可能性も高い</td>
+              </tr>
+            </tbody>
+          </table>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">目指す理想のアプリケーションアーキテクチャ</span>
+        </p>
+        <p><img src="images/ib-openapi-app-architecture-1.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">アプリケーションアーキテクチャの課題</span>
+        </p>
+        <p><img src="images/ib-openapi-app-architecture-2.png"  style="border:0" width="80%"></p>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">Frontendサイドアプリケーションアーキテクチャの課題</span>
+        </p>
+        <div style="font-size:16px; margin:auto">
+          <table>
+            <colgroup>
+              <col style="width:20%;">
+              <col style="width:80%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th width="100px">課題</th>
+                <th>詳細 / 関連テーマ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">ステートフルとスケーラブルを両立するための共有データストア</td>
+                <td>
+                  セッションデータや状態(ショッピングカート等)データといった中間データを共有するデータストアのAZ構成やフェイルオーバ時のエラーハンドリング方法等
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span style="font-size:12px">[テーマ]<br/>
+                  　AmazonElastiCache/SpringSession/SpringDataRedisを使ったスケラーブルアプリケーションノウハウ整理
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">サービス処理設計</td>
+                <td>
+                  処理に応じてサービスのオーケストレーション・コレオグラフィなど連携方式
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span style="font-size:12px">[テーマ]<br/>
+                  　サービス連携処理パターンの検証(オーケストレーション/コレオグラフィ/SAGAパターン等)<br/>
+                  　ドメイン駆動設計を用いたマイクロサービスモデリング手法検証
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">トランザクション管理</td>
+                <td>
+                  複数のサービスを跨ぐトランザクションをロールバックする場合の補償トランザクション
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span style="font-size:12px">[テーマ]<br/>
+                  　サービス連携処理パターンの検証(オーケストレーション/コレオグラフィ/SAGAパターン等)
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">サービスディスカバリ</td>
+                <td>
+                  スケール・縮退するコンテナで実行されるバックエンドサービスを検索する方式
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span style="font-size:12px">[テーマ]<br/>
+                  　EKS/AppMesh/SpringCloudKubernetes/サービスメッシュ検証
+                  </span>
+                </td>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">サービス連携方式</td>
+                <td>
+                  同期型(REST)や非同期型(メッセージキュー)通信方式
+                </td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid;">
+                  <span style="font-size:12px">[テーマ]<br/>
+                  　オンライン非同期処理パターン(Spring Cloud Stream/Spring Integration/Amazon Managed Streaming for Kafka/Kinesis)
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">Frontendサイドアプリケーションアーキテクチャの課題</span>
+        </p>
+        <div style="font-size:16px; margin:auto">
+          <table>
+            <colgroup>
+              <col style="width:30%;">
+              <col style="width:70%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th width="100px">課題</th>
+                <th>詳細 / 関連テーマ</th>
+              </tr>
+            </thead>
+              <tr>
+                <td rowspan="2">サービス認証・認可方式</td>
+                <td>
+                  OIDC、OAuth2.0に準拠した、JWTを使ったアクセストークンの連携方式(クライアント)
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span style="font-size:12px">[テーマ]<br/>
+                  　OpenIDConnect/OAuth2/認証・認可処理パターン検証
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">通信エラーハンドリング</td>
+                <td>
+                  通信エラー時のリトライやサーキットブレイカーを使ったエラーハンドリング方式
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span style="font-size:12px">[テーマ]<br/>
+                  　サービス連携処理パターンの検証(オーケストレーション/コレオグラフィ/SAGAパターン等)
+                  </span>
+                </td>
+              </tr>
+            <tr>
+                <td rowspan="2">マネージドサービス連携</td>
+                <td>
+                  揮発性であるコンテナ上で、ストレージやキューとしてマネージドサービスを利用する場合の方式
+                </td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid;">
+                  <span style="font-size:12px">[テーマ]<br/>
+                    マネージドサービス連携ベストプラクティス(AmazonS3/AmazonSQS/AmazonMQ/AmazonSNS)
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">マルチクライアント</td>
+                <td>
+                  Webアプリケーション以外にもスマートフォン・タブレットなどSPAクライアントがある場合のアーキテクチャ
+                </td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid;">
+                  <span style="font-size:12px">[テーマ]<br/>
+                    モバイルアプリケーション(AWS MobileHub/Amplify/iOS/Android)教育コンテンツ整備/アーキテクチャパターン検証・実装ノウハウの整理
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">Backendサイドアプリケーションアーキテクチャの課題</span>
+        </p>
+        <div style="font-size:16px; margin:auto">
+          <table>
+            <colgroup>
+              <col style="width:30%;">
+              <col style="width:70%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th width="100px">課題</th>
+                <th>詳細 / 関連テーマ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">サービス認証・認可方式</td>
+                <td>
+                  OIDC、OAuth2.0に準拠した、JWTを使ったアクセストークンの連携方式(サーバサイド)。非同期型(メッセージキュー)連携する場合のトークン認証方式
+                </td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid;">
+                  <span style="font-size:12px">[テーマ]<br/>
+                  　OpenIDConnect/OAuth2/認証・認可処理パターン検証
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">アプリケーションのステートレス化方式</td>
+                <td>RESTに準拠するためのAPI規約・ルール(HTTPステータスコード等)、実装方式</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid;">
+                  <span style="font-size:12px">[テーマ]<br/>
+                  　サービス連携処理パターンの検証(オーケストレーション/コレオグラフィ/SAGAパターン等)
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">サービス連携方式</td>
+                <td>同期型(REST)や非同期型(メッセージキュー)通信方式</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid;">
+                  <span style="font-size:12px">[テーマ]<br/>
+                  　サービス連携処理パターンの検証(オーケストレーション/コレオグラフィ/SAGAパターン等) <br/>
+                  　オンライン非同期処理パターン(Spring Cloud Stream/Spring Integration/Amazon Managed Streaming for Kafka/Kinesis)
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">データベースのスケーラビリティ</td>
+                <td>CQRSやイベントソーシング、リードレプリカ、NoSQLなど</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid;">
+                  <span style="font-size:12px">[テーマ]<br/>
+                    AmazonDynanoDB/ApacheCassandraService等AP型NoSQLの特徴/運用ノウハウ/データモデリング手法確立
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2">トランザクション管理方式</td>
+                <td>サービスごとのデータベース分離やトランザクションの管理</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid;">
+                  <span style="font-size:12px">[テーマ]<br/>
+                    ドメイン駆動設計を用いたマイクロサービスモデリング手法検証
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <p>
+          <span style="font-size:24px">課題をチャットアプリケーションと同様、AWS上で検証しながら考えよう</span>
+        </p>
+        <p><img src="images/chat-application-architecture.png"  style="border:0" width="80%"></p>
+      </section>
+    </section>
   </div>
+
 </div>
 
 <script src="lib/js/head.min.js"></script>
@@ -77,7 +695,49 @@
     ]
   };
 
-  
+
+
+  var configOptions = {"autoSlide":0,"loop":false,"slideNumber":true,"autoPlayMedia":true}
+  var initializeOptions = {};
+  extend(initializeOptions, baseOptions);
+  extend(initializeOptions, configOptions);
+  Reveal.initialize(initializeOptions);
+})();
+
+</script>
+
+  </body>
+</html>
+    </section>
+  </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+
+<script>
+  (function() {
+  function extend( a, b ) {
+    for(var i in b) {
+      a[i] = b[i];
+    }
+  }
+  var baseOptions = {
+    transition: 'page',
+
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  };
+
+
 
   var configOptions = {"autoSlide":0,"loop":false,"slideNumber":true,"autoPlayMedia":true}
   var initializeOptions = {};
