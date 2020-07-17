@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+
+<title>cloudnative</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="generator" content="reveal-ck 3.9.2">
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+<!-- Code syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<link rel="stylesheet" href="css/reveal-ck.css">
+
+
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+
+  </head>
+
+  <body>
+    <p><img src="images/site-qr.png" style="position:absolute; top:0px; right:0px; width:10%" ></p>
+    <div class="reveal">
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    <section>
+      <h3><img src="images/aws-logo.png" style="margin: 0px 10px 15px; vertical-align: middle; width:6%" />AWS & Spring <img class="emoji" alt=":seedling:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f331.png"></h3>
+      <p><span style="font-size:28px">クラウドネイティブ・マイクロサービスアプリケーションとDevOps</span></p>
+    </section>
+    <section>
+      <h3>自己紹介</h3>
+
+      <p><img src="images/profile.jpg" style="float:left" width="40%"></p>
+      <div style="margin: 20px 0px auto">
+      <ul>
+        <div style="font-size:20px; margin:auto">
+        <li style="margin: 10px 0px 10px">名前：川畑 光平</li>
+        <li style="margin: 10px 0px 10px">会社：(株)NTTデータ</li>
+        <li style="margin: 10px 0px 10px"><a href="https://aws.amazon.com/jp/blogs/psa/japan-apn-ambassador-2019/" target="_blank">APN AWS Top Engineers &amp; Ambassadors</a></li>
+        <li style="margin: 10px 0px 10px">今の仕事
+          <ul>
+            <li>(主にクラウド系)プロジェジェクト支援</li>
+            <li>R&D</li>
+            <li>AWS社内推進</li>
+            <li>人材育成(技術塾運営)</li>
+          </ul>
+        </li>
+        <li style="margin: 10px 0px 10px">マイナビ「ITSearch+」で記事連載中</li>
+        <li style="margin: 10px 0px 10px">SNSはFacebookのみなので質問あればDMかメールで</li>
+        </div>
+      </ul>
+      </div>
+    </section>
+    <section>
+      <h4>このスライドの使い方</h4>
+        <img src="images/how-to-use-slide.png" style="width: 90%" alt="image"><br/>
+    </section>
+    <section>
+      <h3>本日の紹介する記事</h3>
+      <p>
+        <img src="images/cloud-native-basic.jpg" style="width: 45%" alt="image">
+        <img src="images/cloud-native-advance.jpg" style="width: 45%" alt="image"><br>
+        <img src="images/devops.jpg" style="width:45%" alt="image">
+        <img src="images/microservice-logo.jpg" style="width:45%" alt="image">
+      </p>
+    </section>
+    <section>
+      <h4>2019.9のJSUG登壇の続編</h4>
+        <img src="images/jsug-september-2019.png" style="width: 100%" alt="image"><br/>
+        <span style="font-size:28px">
+          前回の資料は<a href="https://debugroom.github.io/jsug-2019-september/slides/">こちら</a>
+        </span>
+    </section>
+    <section>
+      <section>
+        <h4>
+          <img class="emoji" alt=":cloud:" src="https://github.githubassets.com/images/icons/emoji/unicode/2601.png"> Article Overview</h3>
+        </h4>
+        <p>
+          <img src="images/cloud-native-basic.jpg" style="" alt="image">
+        </p>
+        <p>
+          <span style="font-size:30px">
+            <a href="https://news.mynavi.jp/itsearch/series/devsoft/AWS.html" target="_blank">
+              AWSでよく利用される基本的なサービスの構築方法や、AWSクラウド特有の特徴を活用したSpringBootベースのアプリケーションを実装する際の基本事項をまとめた連載記事
+            </a>
+          </span>
+        </p>
+      </section>
+      <section>
+        <p>サーバレス編</p>
+        <p><img src="images/serverless.png" alt="image"></p>
+        <ul style="list-style-type: none">
+          <span style="font-size:24px">
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4316" target="_blank">(1) Spring Cloud Functionを使ったLambdaファンクション実装</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4318" target="_blank">(2) AWS Lambdaの設定</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4321" target="_blank">(3) Amazon API Gatewayの設定</a></li>
+          </span>
+         </ul>
+      </section>
+      <section>
+        <p>ECSコンテナ編</p>
+        <p><img src="images/ecs-architecture.png" style="float:left" width="50%"></p>
+        <div style="margin: 50px 0px auto">
+          <ul style="list-style-type: none">
+            <div style="font-size:18px">
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4354" target="_blank">(4) VPC(Virtual Private Cloud)の構築</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4359" target="_blank">(5) ALB(Application Load Balancer)の構築</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4363" target="_blank">(6) SpringBootを使ったアプリケーション実装</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4390" target="_blank">(7) アプリケーションのDockerイメージの作成</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4405" target="_blank">(8) ECSクラスタの構築</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4408" target="_blank">(9) ECSタスクの定義</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4416" target="_blank">(10) ECSサービスの実行</a></li>
+            </div>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <p>RDS(PostgreSQL)編</p>
+        <p><img src="images/rds_setting_overview.png" width="80%"></p>
+        <ul style="list-style-type: none">
+          <div style="font-size:24px">
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4422" target="_blank">(11) RDS(RelationalDatabaseService)の構築</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4426" target="_blank">(12) Spring Cloud AWSとSpring Data JPAを使った実装(設定)</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/cloud/4449" target="_blank">(13) Spring Cloud AWSとSpring Data JPAを使った実装(処理実装)</a></li>
+          </div>
+        </ul>
+      </section>
+      <section>
+        <p>NoSQL(基礎解説)編</p>
+        <img src="images/database-cap-category.png" width="60%">
+        <ul style="list-style-type: none">
+          <div style="font-size:24px">
+            <li style="margin: 10px 0px 10px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4473" target="_blank">(14) NoSQL基礎解説(CAP定理による分類)</a></li>
+            <li style="margin: 10px 0px 10px"><a href="https://news.mynavi.jp/itsearch/article/cloud/4479" target="_blank">(15) NoSQL基礎解説(AP型データベースの特徴)</a></li>
+          </div>
+        </ul>
+      </section>
+      <section>
+        <p>NoSQL(DynamoDB)編</p>
+        <p><img src="images/architecture-dynamodb.png" style="float:left" width="45%"><br>
+        <img src="images/ap-database.png" style="margin: 0 0 5px" width="45%"></p>
+        <ul style="list-style-type: none">
+          <div style="font-size:24px">
+            <li style="margin: 10px 0px 10px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4498" target="_blank">(16) AmazonDynamoDBの構築</a></li>
+            <li style="margin: 10px 0px 10px"><a href="https://news.mynavi.jp/itsearch/article/cloud/4506" target="_blank">(17) Spring Data DynamoDBを使った実装(設定)</a></li>
+            <li style="margin: 10px 0px 10px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4512" target="_blank">(18) Spring Data DynamoDBを使った実装(処理実装)</a></li>
+          </div>
+        </ul>
+      </section>
+      <section>
+        <p>NoSQL(ElastiCache[Redis])編</p>
+        <p><img src="images/architecture-elasticache.png" style="float:left" width="40%"></p>
+        <div style="margin: 100px 0px auto">
+          <ul style="list-style-type: none">
+            <div style="font-size:16px">
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4523" target="_blank">(19) ローカルRedisServerの構築</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4525" target="_blank">(20) Spring SessionとSpring Data Redisを使った実装(設定)</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4537" target="_blank">(21) Spring SessionとSpring Data Redisを使った実装(処理実装)</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4543" target="_blank">(22) AmazonElastiCacheの構築</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4566" target="_blank">(23) セッション共有するECSアプリケーション構築(ALB)</a></li>
+              <li style="margin: 15px 0px 15px"><a href="https://news.mynavi.jp/itsearch/article/devsoft/4592" target="_blank">(24) セッション共有するECSアプリケーション実装(ECS)</a></li>
+            </div>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <p>S3編</p>
+        <img src="images/S3Access.png" width="70%">
+        <ul style="list-style-type: none">
+          <div style="font-size:22px">
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4597" target="_blank">(25) AmazonS3バケットの構築とアップロード</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/cloud/4615" target="_blank">(26) SpringCloudAWSを使ったファイルダウンロード・アップロード実装(設定)</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4651" target="_blank">(27) SpringCloudAWSを使ったファイルダウンロード・アップロード実装(処理実装)</a></li>
+          </div>
+        </ul>
+      </section>
+      <section>
+        <p>SQS編</p>
+        <img src="images/sqs-pattern.png" width="60%">
+        <ul style="list-style-type: none">
+          <div style="font-size:22px">
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4656" target="_blank">(28) SQSの概要と構築</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4689" target="_blank">(29) SpringCloudAWSを使ったSQSキューを送信するProducerアプリケーション実装</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4713" target="_blank">(30) SpringBatchを使ったアプリケーション実装(設定)</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4756" target="_blank">(31) SpringBatchを使ったアプリケーション実装(処理実装)</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4767" target="_blank">(32) SpringCloudAWSを使ったSQSキューを取得するConsumerアプリケーション実装</a></li>
+          </div>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h3><img class="emoji" alt=":octocat:" src="https://github.githubassets.com/images/icons/emoji/octocat.png"> Article Overview</h3>
+        <p><img src="images/devops.jpg" alt="image"></p>
+        <span style="font-size:32px"><a href="https://news.mynavi.jp/itsearch/series/devsoft/AWSAuto.html" target="_blank">マイクロサービスアーキテクチャ(MSA)アプリケーションでCI/CDする際の基本事項をまとめた連載記事 </br> デプロイ自動化編</a></span>
+      </section>
+      <section>
+        <p><span style="font-size:24px">クラウドネイティブ連載のECSコンテナ編の環境でMSAアプリケーションを構築</span></p>
+        <p style="margin:0"><img src="images/MicroServiceArchitecture.png" width="45%" style="margin:0"></p>
+        <ul style="list-style-type: none">
+          <span style="font-size:24px">
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4379" target="_blank">(1)MSAアプリケーションのOverview</a></li>
+           </span>
+        </ul>
+      </section>
+      <section>
+        <p>CI - 静的チェックツール環境導入編 -</p>
+        <p><img src="images/continuous-integration.jpg" width="70%" style="margin:0"></p>
+        <ul style="list-style-type: none">
+          <span style="font-size:24px">
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4463" target="_blank">(2)SonarQubeServerの構築</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4466" target="_blank">(3)静的チェックルールの定義とSonarLintのIDEへの設定</a></li>
+          </span>
+        </ul>
+      </section>
+      <section>
+        <p>CI - SpringBootテストコード実装編 -</p>
+        <p><img src="images/microservice-test-scope.png" width="60%" style="margin:0"></p>
+        <ul style="list-style-type: none">
+          <span style="font-size:24px">
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4475" target="_blank">(4)マイクロサービスにおけるテスト自動化とテスト戦略</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4486" target="_blank">(5)マイクロサービスアプリケーションのパッケージ構成</a></li>
+          </span>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <span style="font-size:28px">
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4486" target="_blank">(5〜6)マイクロサービスにおける単体テストコード実装</a>
+              <ul>
+                <li style="margin: 10px 0px 10px">@DataJpaTestアノテーションの利用</li>
+                <li style="margin: 10px 0px 10px">@SpringBootTestアノテーションの利用</li>
+                <li style="margin: 10px 0px 10px">@WebMvcTestアノテーションの利用</li>
+              </ul>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4519" target="_blank">(7)マイクロサービスにおける結合テストコード実装</a>
+              <ul>
+                <li style="margin: 10px 0px 10px">DBUnitの利用</li>
+                <li style="margin: 10px 0px 10px">TestRestTemplateの利用</li>
+              </ul>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4547" target="_blank">(8)マイクロサービスを呼び出す側の単体テストコード実装</a>
+              <ul>
+                <li style="margin: 10px 0px 10px">MockRestServiceServerの利用</li>
+                <li style="margin: 10px 0px 10px">HTMLUnitの利用</li>
+              </ul>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4550" target="_blank">(9)マイクロサービスを含むEnd2Endテストコード実装</a>
+              <ul>
+                <li style="margin: 10px 0px 10px">Seleniumの利用</li>
+              </ul>
+            </li>
+          </span>
+        </ul>
+      </section>
+      <section>
+        <p>CI - AWS CodeBuildによるCI実践編 -</p>
+        <p><img src="images/continuous-integration.jpg" width="70%" style="margin:0"></p>
+        <ul style="list-style-type: none">
+          <span style="font-size:24px">
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4593" target="_blank">(10)CodeBuildの概要とCodeBuild Localの利用</a></li>
+            <li><a href="https://news.mynavi.jp/itsearch/article/devsoft/4595" target="_blank">(11)CodeBuildの設定</a></li>
+          </span>
+        </ul>
+      </section>
+      <section>
+        <p>CI - AWS CodeBuildによるCI実践編 -</p>
+        <p><span style="font-size:32px">GitHubフローをベースにしたブランチ戦略</span></p>
+        <p><img src="images/branch_strategy.png" width="100%"></p>
+      </section>
+      <section>
+        <p>
+          <a href="https://news.mynavi.jp/itsearch/article/devsoft/4600" target="_blank">
+            <span style="font-size:24px">
+              (12) AWS CodePipelineによるCD実践編
+            </span>
+          </a>
+        </p>
+        <p><img src="images/pipeline.png" width="40%" style="margin:0"></p>
+      </section>
+      <section>
+        <p>CD - AWS CodePipelineによるパイプライン1 -</p>
+        <img src="images/pipeline-1.png" width="70%" style="margin:0">
+        <p style="margin:0">
+          <a href="https://news.mynavi.jp/itsearch/article/devsoft/4605" target="_blank">
+            <span style="font-size:24px">
+              (13)Backendコンテナイメージの作成・プッシュ
+            </span>
+          </a>
+        </p>
+      </section>
+      <section>
+        <p>CD - AWS CodePipelineによるパイプライン2 -</p>
+        <img src="images/pipeline-2.png" width="70%" style="margin:0">
+        <p style="margin:0">
+          <a href="https://news.mynavi.jp/itsearch/article/devsoft/4629" target="_blank">
+            <span style="font-size:24px">
+              (14) ステージング環境へのBackendコンテナデプロイ
+            </span>
+          </a>
+        </p>
+      </section>
+      <section>
+        <p>CD - AWS CodePipelineによるパイプライン3 -</p>
+        <img src="images/pipeline-3.png" width="70%" style="margin:0">
+        <p style="margin:0">
+          <a href="https://news.mynavi.jp/itsearch/article/devsoft/4634" target="_blank">
+            <span style="font-size:24px">
+              (15) WebアプリケーションでのE2Eテスト・コンテナイメージ作成
+            </span>
+          </a>
+        </p>
+      </section>
+      <section>
+        <p>CD - AWS CodePipelineによるパイプライン4 -</p>
+        <img src="images/pipeline-4.png" width="70%" style="margin:0">
+        <p style="margin:0">
+          <a href="https://news.mynavi.jp/itsearch/article/devsoft/4653" target="_blank">
+            <span style="font-size:24px">
+              (16) Webアプリケーションのコンテナイメージのプッシュ
+            </span>
+          </a>
+        </p>
+      </section>
+      <section>
+        <p>CD - AWS CodePipelineによるパイプライン5 -</p>
+        <img src="images/pipeline-5.png" width="70%" style="margin:0">
+        <p style="margin:0">
+          <a href="https://news.mynavi.jp/itsearch/article/devsoft/4661" target="_blank">
+            <span style="font-size:24px">
+              (17) ステージング環境へのWebアプリケーションのコンテナデプロイ
+            </span>
+          </a>
+        </p>
+      </section>
+      <section>
+        <p>CD - AWS CodePipelineによるパイプライン6 -</p>
+        <img src="images/pipeline-6.png" width="70%" style="margin:0">
+        <p style="margin:0">
+          <a href="https://news.mynavi.jp/itsearch/article/devsoft/4682" target="_blank">
+            <span style="font-size:24px">
+              (18) ステージング環境でのその他テスト実行・管理者の承認プロセス
+            </span>
+          </a>
+        </p>
+      </section>
+      <section>
+        <p>CD - AWS CodePipelineによるパイプライン7 -</p>
+        <img src="images/pipeline-7.png" width="70%" style="margin:0">
+        <p style="margin:0">
+          <a href="https://news.mynavi.jp/itsearch/article/devsoft/4688" target="_blank">
+            <span style="font-size:24px">
+              (19) Backend・Webアプリケーションのコンテナイメージの並行プッシュ
+            </span>
+          </a>
+        </p>
+      </section>
+      <section>
+        <p>CD - AWS CodePipelineによるパイプライン8 -</p>
+        <img src="images/pipeline-8.png" width="70%" style="margin:0">
+        <p style="margin:0">
+          <a href="https://news.mynavi.jp/itsearch/article/devsoft/4699" target="_blank">
+            <span style="font-size:22px">
+              (20) プロダクション環境へのBackend・Webアプリケーションのコンテナ並行デプロイ
+            </span>
+          </a>
+        </p>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h3><img class="emoji" alt=":octocat:" src="https://github.githubassets.com/images/icons/emoji/octocat.png"> Article Overview</h3>
+        <p><img src="images/devops.jpg" alt="image"></p>
+        <span style="font-size:32px"><a href="https://news.mynavi.jp/itsearch/series/devsoft/AWSAuto.html" target="_blank">クラウドネイティブやデプロイ自動化の連載で作ってきたものを全て基盤自動化する連載記事 </br> 基盤自動化(IaC)編</a></span>
+      </section>
+      <section>
+        <span style="font-size:24px">
+        CloudFormationで環境を自動構築・Spring Cloud AWSでリソース情報にアクセス
+        </span>
+        <p><img src="images/iac-environment.png" alt="image"></p>
+      </section>
+      <section>
+        <p>CloudFormation実行環境構築編</p>
+        <ul style="list-style-type: none">
+          <span style="font-size:28px">
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4725" target="_blank">(21) CloudFormation概要・機能・テンプレート要素など基礎</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4734" target="_blank">(22) AWS CLIの実行環境構築</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4735" target="_blank">(23) IntelliJのCloudFormation Lint Plulginの設定</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4736" target="_blank">(24)テンプレートの記述ルール・実行ヘルパースクリプト</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/cloud/4801" target="_blank">(25)テンプレートテスト環境(Taskcat)の構築</a>
+            </li>
+          </span>
+        </ul>
+      </section>
+      <section>
+        <p>クラウド環境構築編</p>
+        <ul style="list-style-type: none">
+          <span style="font-size:28px">
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4810" target="_blank">(26) VPC/Subnet/RouteTable/InternetGateway構築自動化テンプレート</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4829" target="_blank">(27) SecurityGroup/NATGateway構築自動化テンプレート</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4842" target="_blank">(28) ApplicationLoadBalancer構築自動化テンプレート</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4869" target="_blank">(29) RDS構築自動化テンプレート</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4896" target="_blank">(30) DynamoDB構築自動化テンプレート</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4916" target="_blank">(31) ElastiCache構築自動化テンプレート</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4926" target="_blank">(32) SQS/S3構築自動化テンプレート</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4927" target="_blank">(33) NestedStackを使ったネストテンプレート</a>
+            </li>
+          </span>
+        </ul>
+      </section>
+      <section>
+        <p>アプリケーション実装・構築編</p>
+        <img src="images/stack-reference.png" width="100%" style="margin:0">
+        <ul style="list-style-type: none">
+          <span style="font-size:24px">
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4948" target="_blank">(34) Backend Serviceアプリケーションにおけるスタック情報の取得／設定</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4970" target="_blank">(35) Frontend Webアプリケーションにおけるスタック情報の取得／設定</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/4995" target="_blank">(36) ECSクラスタの構築</a>
+            </li>
+            <li style="margin: 10px 0px 10px">
+              <a href="https://news.mynavi.jp/itsearch/article/devsoft/5002" target="_blank">(37) ECSタスク定義の構築</a>
+            </li>
+          </span>
+        </ul>
+      </section>
+      <section>
+        <p>Coming soon</p>
+        <img src="images/coming-soon.png" width="90%" style="margin:0">
+        <ul style="list-style-type: none">
+          <span style="font-size:24px">
+            <li style="margin: 10px 0px 10px">
+              (38-39) ECSタスクロールの定義・ECSサービスの実行
+            </li>
+            <li style="margin: 10px 0px 10px">
+              (40〜) CI/CD環境の基盤構築自動化・Lambdaを使ったカスタムスクリプト実行
+            </li>
+          </span>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h4>
+          <img class="emoji" alt=":cloud:" src="https://github.githubassets.com/images/icons/emoji/unicode/2601.png"> Article Overview</h3>
+        </h4>
+        <p>
+          <img src="images/cloud-native-advance.jpg" style="" alt="image">
+        </p>
+        <p>
+          <span style="font-size:28px">
+            <a href="https://news.mynavi.jp/itsearch/series/devsoft/aws_adv.html" target="_blank">
+              クラウドネイティブ基本編からさらに発展した高度な処理方式をまとめた連載記事
+            </a>
+          </span>
+        </p>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h4>
+          <img class="emoji" alt=":cloud:" src="https://github.githubassets.com/images/icons/emoji/unicode/2601.png"> Article Overview</h3>
+        </h4>
+        <p>
+          <img src="images/microservice-logo.jpg" style="" alt="image">
+        </p>
+        <p>
+          <span style="font-size:30px">
+            <a href="https://news.mynavi.jp/itsearch/series/devsoft/aws_2.html" target="_blank">
+              AWSでマイクロサービスアーキテクチャを構築するためにサポートしてくれるマネージドサービスや
+              アプリケーション構成のポイントを紹介する連載。
+            </a>
+          </span>
+        </p>
+      </section>
+    </section>
+
+  </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  (function() {
+  function extend( a, b ) {
+    for(var i in b) {
+      a[i] = b[i];
+    }
+  }
+  var baseOptions = {
+    transition: 'page',
+
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  };
+
+
+
+  var configOptions = {"autoSlide":0,"loop":false,"slideNumber":true,"autoPlayMedia":true}
+  var initializeOptions = {};
+  extend(initializeOptions, baseOptions);
+  extend(initializeOptions, configOptions);
+  Reveal.initialize(initializeOptions);
+})();
+
+</script>
+
+  </body>
+</html>
+    </section>
+  </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+
+<script>
+  (function() {
+  function extend( a, b ) {
+    for(var i in b) {
+      a[i] = b[i];
+    }
+  }
+  var baseOptions = {
+    transition: 'page',
+
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  };
+
+
+
+  var configOptions = {"autoSlide":0,"loop":false,"slideNumber":true,"autoPlayMedia":true}
+  var initializeOptions = {};
+  extend(initializeOptions, baseOptions);
+  extend(initializeOptions, configOptions);
+  Reveal.initialize(initializeOptions);
+})();
+
+</script>
+
+  </body>
+</html>
