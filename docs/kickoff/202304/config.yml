@@ -1,0 +1,8 @@
+theme: "moon"
+transition: "page"
+title: "cloudnative"
+revealjs_config:
+  autoSlide: 0
+  loop: false
+  slideNumber: true
+  autoPlayMedia: true
